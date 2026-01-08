@@ -1,44 +1,48 @@
-import { ProductButtons, ProductCard, ProductImage, ProductTitle } from "../components"
-import '../styles/custom-styles.css'
+import {
+  ProductButtons,
+  ProductCard,
+  ProductImage,
+  ProductTitle,
+} from "../components";
+import "../styles/custom-styles.css";
 
 const product = {
-    id: '1',
-    title: 'Coffe Mug - Card',
-    img: './coffee-mug.png',
-}
+  id: "1",
+  title: "Coffe Mug - Card",
+  img: "./coffee-mug.png",
+};
 
 export const ShoppingPage = () => {
-    return (
-        <div>
-            <h1>Shopping Store</h1>
-            <hr />
+  return (
+    <div>
+      <h1>Shopping Store</h1>
+      <hr />
 
-            <div style={{
-                display: 'flex',
-                flexDirection: 'row',
-                flexWrap: 'wrap'
-            }}>
-                <ProductCard
-                    product={product}
-                    className="bg-dark"
-                >
-                    <ProductImage className="custom-image" />
-                    <ProductTitle title='Taza Javascript' className="text-white" />
-                    <ProductButtons />
-                </ProductCard>
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "row",
+          flexWrap: "wrap",
+        }}
+      >
+        <ProductCard product={product} className="bg-dark text-white">
+          <ProductImage className="custom-image" />
+          <ProductTitle title="Taza Javascript" className="text-bold" />
+          <ProductButtons className="custom-buttons" />
+        </ProductCard>
 
-                <ProductCard product={product}>
-                    <ProductImage />
-                    <ProductTitle title='Taza Developer' />
-                    <ProductButtons />
-                </ProductCard>
+        <ProductCard product={product} style={{ backgroundColor: "#70D1F6" }}>
+          <ProductImage />
+          <ProductTitle title="Taza Developer" />
+          <ProductButtons style={{ display: "flex", justifyContent: "end" }} />
+        </ProductCard>
 
-                <ProductCard product={product}>
-                    <ProductImage />
-                    <ProductTitle />
-                    <ProductButtons />
-                </ProductCard>
-            </div>
-        </div>
-    )
-}
+        <ProductCard product={product}>
+          <ProductImage />
+          <ProductTitle />
+          <ProductButtons />
+        </ProductCard>
+      </div>
+    </div>
+  );
+};
